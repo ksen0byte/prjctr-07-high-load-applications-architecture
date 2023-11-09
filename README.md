@@ -84,16 +84,8 @@ class sql_write_master_slave,sql_read_replicas database;
 class cdn,os,memcache storage;
 ```
 
-## Suggested Improvements:
-1. **Caching Strategy**: Implement a more sophisticated caching mechanism, such as distributed caching, to manage the high volume of reads and improve latency.
-   *Why*: Given the read-heavy nature of the service, an effective caching strategy is crucial to reduce database load and improve response times.
+## Possible Improvements:
+1. **Caching Strategy**: Use distributed caching instead of MemCache to handle more data.
 2. **Database Sharding**: Consider database sharding to distribute the load across multiple databases, rather than relying solely on master/slave replication.
-   *Why*: Sharding can improve performance and scalability by reducing the load on any single database server and preventing any single point of failure.
-3. **Microservices Architecture**: Decompose the monolithic services into microservices to allow independent scaling and development.
-   *Why*: A microservices architecture can improve scalability and fault isolation. It also allows for continuous deployment and integration which can speed up feature releases.
-4. **Data Partitioning in Object Store**: Implement data partitioning strategies like range-based or hash-based partitioning for the Object Store.
-   *Why*: This would facilitate faster data retrieval and better manage the massive amount of content, especially as the service scales.
-5. **Geo-Replication of Databases**: To ensure high availability and reduce latency, implement geo-replication of databases.
-   *Why*: Geo-replication provides data locality to users and ensures service continuity in case of regional failures.
-6. **Machine Learning for Feed Optimization**: Integrate machine learning models to curate and personalize user feeds.
-   *Why*: Personalized feeds can significantly enhance user engagement by showing more relevant content, which is critical for retention in social platforms.
+3. **Data Partitioning in Object Store**: Implement data partitioning strategies like range-based or hash-based partitioning for the Object Store.
+4. **Geo-Replication of Databases**: To ensure high availability and reduce latency, implement geo-replication of databases.
